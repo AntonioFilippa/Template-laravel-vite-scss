@@ -1,20 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laravel template</title>
-    @vite ('/resources/js/app.js')
-</head>
-<body>
-    @include('layouts.shared.header')
-    
-    @yield('content')
-    
-    @include('layouts.shared.footer')
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>@yield('page-title')</title>
+        <link rel="stylesheet" href="{{asset('scss/app.scss')}}">
+    </head>
+    <body>
 
-    
-    
-</body>
+        @include('layouts.shared.header')
+
+        <main>
+            @yield('movies-container')
+        </main>
+
+        @include('layouts.shared.footer')
+
+    </body>
 </html>

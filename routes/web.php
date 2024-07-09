@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\PageController; // Import the PageController
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+/*ROUTE PAGECONTROLLER CLASS <INDEX> METHOD*/
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [PageController::class, 'index'])->name('home');
